@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# 시도별 응급 의료 접근성 분석 대시보드 및 정책 시뮬레이터
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 개요
 
-## Available Scripts
+[emergency-policy-clustering-analysis](https://github.com/gaeun1961/emergency-policy-clustering-analysis)에서 진행한 데이터 분석 결과를 바탕으로 만든 웹 대시보드입니다. K-Means 클러스터링으로 도출된 대한민국 17개 시도의 응급 의료 취약성 유형을 시각화하고, 정책 시뮬레이션 기능을 제공합니다.
 
-In the project directory, you can run:
+## 배경
 
-### `npm start`
+기존 클러스터링 분석에서 17개 시도는 고령화율과 인구 10만 명당 응급 의료기관 접근성 지표(권역센터, 지역센터, 지역기관, 응급시설)를 기준으로 3가지 유형으로 분류되었습니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Cluster A (고령/시설중심형)**: 고령화 압력이 최우선 과제, 자원 효율화 정책 필요
+- **Cluster B (중위/균형형)**: 모든 지표 중간 수준, 지역별 격차 해소에 집중
+- **Cluster C (대도시/인구과밀형)**: 인구 과밀로 인한 절대적 자원 부족, 상위 응급센터 확충 시급
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+이 분석 결과(클러스터 중심점 등)를 정책 결정자와 일반 사용자가 직관적으로 확인할 수 있도록 대시보드 형태로 구현했습니다.
 
-### `npm test`
+## 데이터 출처
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 응급의료기관 현황
+- 응급의료기관 외의 의료기관(응급의료시설) 현황
+- 연령별 인구 현황(연간)
 
-### `npm run build`
+(원본 데이터 파일은 [분석 레포](https://github.com/gaeun1961/emergency-policy-clustering-analysis)에 포함)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 담당 역할
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+이 프로젝트에서 데이터 분석(전처리, K-Means 클러스터링, PCA 시각화, 클러스터 유형 해석)을 담당했습니다. 대시보드 UI/UX 구현은 팀원이 맡아 진행했습니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 기술 스택
 
-### `npm run eject`
+- JavaScript
+- (분석 단계: Python, pandas, scikit-learn — [분석 레포](https://github.com/gaeun1961/emergency-policy-clustering-analysis) 참고)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 관련 레포
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [emergency-policy-clustering-analysis](https://github.com/gaeun1961/emergency-policy-clustering-analysis) — 원본 데이터 분석 및 클러스터링
